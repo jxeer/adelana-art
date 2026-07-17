@@ -27,6 +27,7 @@ export default function Concierge({ selectedArtworkId }: ConciergeProps) {
   const [formCity, setFormCity] = useState("");
   const [formNotes, setFormNotes] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState("");
   const [submittedInquiries, setSubmittedInquiries] = useState<CollectorInquiry[]>([]);
 
   const chatEndRef = useRef<HTMLDivElement>(null);
@@ -119,30 +120,57 @@ export default function Concierge({ selectedArtworkId }: ConciergeProps) {
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formName || !formEmail) return;
 
     const targetArt = ARTWORKS.find((a) => a.id === selectedArtId) || ARTWORKS[0];
 
-    const newInquiry: CollectorInquiry = {
-      artworkId: targetArt.id,
-      artworkTitle: targetArt.title,
-      name: formName,
-      email: formEmail,
-      notes: formNotes,
-      deliveryCity: formCity,
-      isCustomRequest: false
-    };
+    try {
+      const response = await fetch("https://formspree.io/f/mojgeblr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          name: formName,
+          email: formEmail,
+          deliveryCity: formCity,
+          notes: formNotes,
+          artworkId: targetArt.id,
+          artworkTitle: targetArt.title
+        })
+      });
 
-    setSubmittedInquiries((prev) => [newInquiry, ...prev]);
-    setFormSubmitted(true);
+      if (!response.ok) {
+        throw new Error("Unable to submit inquiry.");
+      }
 
-    // Reset form fields
-    setFormName("");
-    setFormEmail("");
-    setFormCity("");
-    setFormNotes("");
+      const newInquiry: CollectorInquiry = {
+        artworkId: targetArt.id,
+        artworkTitle: targetArt.title,
+        name: formName,
+        email: formEmail,
+        notes: formNotes,
+        deliveryCity: formCity,
+        isCustomRequest: false
+      };
+
+      setSubmittedInquiries((prev) => [newInquiry, ...prev]);
+      setFormSubmitted(true);
+      setFormError("");
+
+      // Reset form fields
+      setFormName("");
+      setFormEmail("");
+      setFormCity("");
+      setFormNotes("");
+    } catch (error) {
+      console.error("Formspree submission failed:", error);
+      setFormSubmitted(false);
+      setFormError("We couldn’t send your inquiry right now. Please try again shortly.");
+    }
   };
 
   return (
@@ -375,6 +403,17 @@ export default function Concierge({ selectedArtworkId }: ConciergeProps) {
                 Log Inquiry with Studio
               </button>
             </form>
+
+            {formError && (
+              <div className="mt-4 border border-red-500/30 bg-red-500/10 p-3 text-center" id="form-error-message">
+                <p className="text-[9px] tracking-widest text-red-300 font-mono uppercase">
+                  Inquiry Not Sent
+                </p>
+                <p className="text-[9px] text-neutral-400 leading-normal font-light mt-1">
+                  {formError}
+                </p>
+              </div>
+            )}
 
             {/* Ledger Submission feedback */}
             <AnimatePresence>
