@@ -48,6 +48,10 @@ function sendJson(res: ServerResponse, statusCode: number, payload: unknown) {
   res.end(JSON.stringify(payload));
 }
 
+async function sleep(ms: number) {
+  await new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export default async function handler(req: IncomingMessage & { body?: any }, res: ServerResponse) {
   if (req.method !== "POST") {
     sendJson(res, 405, { error: "Method not allowed." });
@@ -92,14 +96,29 @@ When discussing the artwork:
 
 Please keep responses relatively concise (2-4 paragraphs) to maintain a spacious, gallery-like conversation.`;
 
-    const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
-      contents,
-      config: {
-        systemInstruction,
-        temperature: 0.7,
-      },
-    });
+    let response;
+    let attempt = 0;
+    while (attempt < 2) {
+      try {
+        response = await ai.models.generateContent({
+          model: "gemini-2.5-flash",
+          contents,
+          config: {
+            systemInstruction,
+            temperature: 0.7,
+          },
+        });
+        break;
+      } catch (error: any) {
+        const status = error?.status || error?.statusCode;
+        if (status === 503 && attempt === 0) {
+          attempt += 1;
+          await sleep(1000);
+          continue;
+        }
+        throw error;
+      }
+    }
 
     sendJson(res, 200, { reply: response.text });
   } catch (error: any) {
