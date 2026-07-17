@@ -1,20 +1,46 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Adelana Art Museum
 
-# Run and deploy your AI Studio app
+Adelana is a contemporary fine-art museum experience built as a polished single-page web experience. The project presents a curated collection of mixed-media works through immersive storytelling, a guided exhibition flow, and a collector concierge experience.
 
-This contains everything you need to run your app locally.
+## What the project includes
 
-View your app in AI Studio: https://ai.studio/apps/8e51c938-4651-4cc9-8399-b853e9b704e4
+- A cinematic entrance experience with a featured artwork
+- An exhibition gallery with artwork details, story, and meaning
+- A creation atelier section that outlines the studio process
+- A collector concierge experience with inquiry and contact flow
+- A responsive layout designed for desktop and mobile viewing
 
-## Run Locally
+## Tech stack
 
-**Prerequisites:**  Node.js
+- React + TypeScript
+- Vite
+- Tailwind-inspired utility styling
+- Motion animations
+- Express dev server
 
+## Getting started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Prerequisites:
+- Node.js
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the app locally:
+
+```bash
+npm run dev
+```
+
+## Project structure
+
+- src/ — application UI, components, data, and styles
+- public/ — static assets such as images and icons
+- server.ts — local development server
+
+## Notes
+
+The experience is designed to feel like an intimate museum presentation, with thoughtful pacing, atmospheric visuals, and carefully crafted collection storytelling.
