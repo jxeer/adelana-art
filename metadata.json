@@ -1,0 +1,6 @@
+{
+  "name": "Adelana Art Museum",
+  "description": "An immersive, quiet digital museum experience for Adelana mixed-media fine art.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
