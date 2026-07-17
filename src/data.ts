@@ -3,8 +3,8 @@ import { Artwork } from "./types";
 // ⚠️ PLACEHOLDER COPY: dimensions, materials, story, and meaning below are
 // drafted in the brand voice as placeholders so the site is complete for
 // launch. Replace with the artist's actual details for each piece as soon
-// as possible — especially "dimensions" and "materials," which should be
-// accurate, not decorative.
+// as possible — especially "dimensions" and "materials," which still need
+// the artist's real input rather than decorative approximation.
 
 export const ARTWORKS: Artwork[] = [
   {
@@ -15,8 +15,8 @@ export const ARTWORKS: Artwork[] = [
     materials: "Mixed media on canvas.",
     seriesSize: 1,
     status: "Available",
-    story: "I AM is a meditation on identity and presence — a declaration rendered in physical, textured form.",
-    meaning: "A study of selfhood and quiet assertion, inviting the viewer to sit with the weight of simply being.",
+    story: "The work arrives as a quiet act of self-recognition, where layered surfaces feel both intimate and monumental.",
+    meaning: "It considers the tension between the private self and the public gaze, asking what remains when identity is stripped to its essential pulse.",
     creationSteps: [
       "Conceptual development and composition drafting.",
       "Building the base layers and underpainting.",
@@ -36,8 +36,8 @@ export const ARTWORKS: Artwork[] = [
     materials: "Mixed media on canvas.",
     seriesSize: 1,
     status: "Available",
-    story: "A tender rendering of the bond between mother and child, grounded in warmth and protection.",
-    meaning: "An exploration of lineage, care, and the quiet strength passed between generations.",
+    story: "A tender study of inheritance, where the body becomes a shelter made visible through touch, shadow, and soft pressure.",
+    meaning: "It honors the fragile continuity of care, tracing how love is carried from one body to the next, almost without words.",
     creationSteps: [
       "Conceptual development and composition drafting.",
       "Building the base layers and underpainting.",
@@ -57,8 +57,8 @@ export const ARTWORKS: Artwork[] = [
     materials: "Mixed media on canvas.",
     seriesSize: 1,
     status: "Available",
-    story: "Among Us considers community, belonging, and the presence we hold within a collective.",
-    meaning: "A reflection on shared space and unseen connection between individuals within a larger whole.",
+    story: "The piece gathers a field of presences into a single atmosphere, as if each figure were listening for the others just beyond the frame.",
+    meaning: "It speaks to belonging as something felt rather than declared, a shared current that binds individuals without making them identical.",
     creationSteps: [
       "Conceptual development and composition drafting.",
       "Building the base layers and underpainting.",
@@ -78,8 +78,8 @@ export const ARTWORKS: Artwork[] = [
     materials: "Mixed media on canvas.",
     seriesSize: 1,
     status: "Available",
-    story: "Wonderful Nina is a portrait rendered in homage — a study of voice, defiance, and grace.",
-    meaning: "A celebration of an icon whose presence continues to resonate across generations.",
+    story: "Rendered with both reverence and defiance, the portrait turns presence into a kind of afterglow, luminous and unyielding.",
+    meaning: "It celebrates a figure who refuses to be reduced to a single story, allowing charisma, memory, and resistance to coexist in one enduring image.",
     creationSteps: [
       "Conceptual development and composition drafting.",
       "Building the base layers and underpainting.",
@@ -99,8 +99,8 @@ export const ARTWORKS: Artwork[] = [
     materials: "Mixed media on canvas.",
     seriesSize: 1,
     status: "Available",
-    story: "CrossRoads captures a moment of decision — the threshold between paths, and the weight of choosing.",
-    meaning: "An inquiry into transition, fate, and the crossings — literal and spiritual — that shape a life.",
+    story: "The work stands at the threshold where intention meets uncertainty, where each mark seems to hesitate before moving forward.",
+    meaning: "It explores the quiet drama of change — the crossing itself, not merely the destination — and the courage required to choose.",
     creationSteps: [
       "Conceptual development and composition drafting.",
       "Building the base layers and underpainting.",
@@ -120,8 +120,8 @@ export const ARTWORKS: Artwork[] = [
     materials: "Mixed media on canvas.",
     seriesSize: 1,
     status: "Available",
-    story: "Eyes and Thoughts turns inward, rendering the interior life visible through gaze and expression.",
-    meaning: "A meditation on perception, introspection, and what passes silently behind the eyes.",
+    story: "A portrait of inwardness, where the gaze becomes a chamber of memory, doubt, and unspoken thought.",
+    meaning: "It asks what is visible when a person turns inward, revealing that the most intimate landscapes are often the ones no one else can enter.",
     creationSteps: [
       "Conceptual development and composition drafting.",
       "Building the base layers and underpainting.",

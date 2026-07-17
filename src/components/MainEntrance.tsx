@@ -121,7 +121,7 @@ export default function MainEntrance({ onEnter }: MainEntranceProps) {
           transition={{ duration: 1, delay: 1.5 }}
           className="mb-4 md:mb-0"
         >
-          Curator Code: <span className="text-amber-500/80 font-semibold">Julian</span>
+          A Private Collection
         </motion.div>
         
         <motion.div

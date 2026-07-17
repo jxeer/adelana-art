@@ -10,22 +10,22 @@ export default function ProcessAtelier() {
 
   // Specific visual indicators for each step
   const stepVisuals = [
-    { label: "Concept drafting", detail: "Notebook sketches, architectural schematics, philosophical outlines." },
-    { label: "Generative model", detail: "Neural texture renders, gradient palettes, color balance." },
-    { label: "Vector arrays", detail: "Layer guides, print mapping, structure placement." },
-    { label: "Archival pigment", detail: "400gsm cotton linen, ultra-dense fine art printing." },
-    { label: "Sculpting compound", detail: "Carrara marble paste, structural acrylic gesso, thick plaster." },
-    { label: "Deep staining", detail: "Basalt sand washes, charcoal glazes, acrylic overlay." },
-    { label: "Gilding size", detail: "Adhesive laying, 24k gold foil, white gold sheets, burnishing." },
-    { label: "UV barrier", detail: "Conservation glaze, archival varnishing, matte surface lock." },
-    { label: "Ash wood floating", detail: "Suspended float framing, protective wood-backing gesso." }
+    { label: "Concept drafting", detail: "Sketches, notes, and compositional studies prepared for the work." },
+    { label: "Material exploration", detail: "Reference studies and surface tests to shape the piece's tone and texture." },
+    { label: "Structure and layout", detail: "Planning the work's balance, rhythm, and spatial relationships." },
+    { label: "Surface preparation", detail: "Preparing the support and foundational layers for the final composition." },
+    { label: "Textural development", detail: "Layering and shaping tactile elements to build depth and presence." },
+    { label: "Color and tone", detail: "Working with pigment, light, and atmosphere to guide the visual experience." },
+    { label: "Finishing details", detail: "Refining the surface and adding the final accents that define the work." },
+    { label: "Protective finishing", detail: "Applying a final seal or protective finish for longevity and stability." },
+    { label: "Presentation", detail: "Preparing the work for display, framing, and installation." }
   ];
 
   const materialList = [
-    { name: "24k Gold Leaf", type: "Gilding", origin: "Handcrafted sheets from Florence" },
-    { name: "Carrara Marble Dust", type: "Sculpting Relief", origin: "Ultra-fine Italian marble powder" },
-    { name: "Icelandic Volcanic Sand", type: "Mineral Texture", origin: "Basalt black sand granules" },
-    { name: "Archival Cotton Linen", type: "Canvas Base", origin: "400gsm double-primed linen weave" }
+    { name: "Fine Gold Leaf", type: "Gilding", origin: "To be confirmed with the artist" },
+    { name: "Fine Mineral Powder", type: "Sculptural Texture", origin: "To be confirmed with the artist" },
+    { name: "Textural Mineral Aggregate", type: "Surface Texture", origin: "To be confirmed with the artist" },
+    { name: "Fine Linen Support", type: "Canvas Base", origin: "To be confirmed with the artist" }
   ];
 
   return (
