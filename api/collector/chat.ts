@@ -97,11 +97,12 @@ When discussing the artwork:
 Please keep responses relatively concise (2-4 paragraphs) to maintain a spacious, gallery-like conversation.`;
 
     let response;
-    let attempt = 0;
-    while (attempt < 2) {
+    const modelsToTry = ["gemini-3.5-flash", "gemini-3-flash"];
+
+    for (let index = 0; index < modelsToTry.length; index += 1) {
       try {
         response = await ai.models.generateContent({
-          model: "gemini-2.5-flash",
+          model: modelsToTry[index],
           contents,
           config: {
             systemInstruction,
@@ -111,11 +112,20 @@ Please keep responses relatively concise (2-4 paragraphs) to maintain a spacious
         break;
       } catch (error: any) {
         const status = error?.status || error?.statusCode;
-        if (status === 503 && attempt === 0) {
-          attempt += 1;
-          await sleep(1000);
+        const isOverloaded503 = status === 503;
+
+        if (isOverloaded503 && index === 0) {
+          console.error("Gemini 503 overload on primary model, retrying in 1.5s", error);
+          await sleep(1500);
           continue;
         }
+
+        if (isOverloaded503 && index === 1) {
+          console.error("Gemini 503 overload on fallback model, giving up", error);
+          throw error;
+        }
+
+        console.error("Gemini request failed", error);
         throw error;
       }
     }
