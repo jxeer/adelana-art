@@ -142,19 +142,19 @@ export const CREATION_STEPS = [
     description: "Every piece begins with deep conceptual questioning. We investigate architectural space, light, and texture, drafting a philosophical narrative that serves as the soul of the work."
   },
   {
-    phase: "II. Preliminary Studies",
-    title: "Charcoal and Sketches",
-    description: "Translating abstract thoughts and reflections into physical drawings. We create multiple charcoal studies and geometric layouts on archival paper to refine the composition's balance."
+    phase: "II. AI Concept Development",
+    title: "Generative Direction",
+    description: "The concept is explored through iterative image generation and visual experimentation, allowing the studio to test mood, structure, and symbolic language before committing to a final composition."
   },
   {
-    phase: "III. Canvas Preparation",
-    title: "The Heavy Linen",
-    description: "Stretching heavy, museum-grade raw linen onto custom-built hardwood support panels. A textured base gesso is applied to create a high-friction surface for subsequent layers."
+    phase: "III. Digital Composition",
+    title: "Compositional Refinement",
+    description: "The selected direction is translated into a precise digital composition, balancing rhythm, scale, and spatial tension while preparing the piece for high-quality archival production."
   },
   {
-    phase: "IV. Topological Mapping",
-    title: "Structural Coordinates",
-    description: "Drafting geometric guidelines and coordinate points directly onto the prepared canvas. This map guides the physical boundaries of the tactile relief lines that follow."
+    phase: "IV. Archival Printing",
+    title: "Printed Onto Canvas",
+    description: "The refined composition is printed onto canvas using archival-grade materials, establishing the support on which later sculptural and painted layers will be built."
   },
   {
     phase: "V. Texture Sculpting",
